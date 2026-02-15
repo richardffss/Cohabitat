@@ -1,0 +1,5 @@
+{
+  "name": "Cohabitat",
+  "description": "An all-in-one household management application for roommates and families. Features expense tracking, chore automation via AI, shopping lists, and house announcements.",
+  "requestFramePermissions": []
+}
