@@ -1,30 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cohabitat - Smart Home Management</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohabitat | The AI-Powered Roommate App</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-      body {
-        font-family: 'Inter', sans-serif;
-      }
+        body { font-family: 'Inter', sans-serif; }
+        .mono { font-family: 'Fira Code', monospace; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
 </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
-    <div id="root"></div>
-  </body>
+<body class="bg-slate-950 text-slate-200 antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tight text-white">Cohabitat<span class="text-indigo-500">.</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#how-it-works" class="hover:text-white transition">How it Works</a>
+                <a href="#tech" class="hover:text-white transition">Tech Stack</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://github.com/richardffss/Cohabitat" class="text-sm font-medium hover:text-white transition">GitHub</a>
+                <a href="https://ai.studio/apps/drive/1FOn-bX0fF3sS0kK9AGrrNYWbjNvrlnNN" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Try Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
+                The Operating System for <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Your Shared Home.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Cohabitat is an intelligent "App per coinquilini" [1] that eliminates friction through automated task management and AI-powered coordination.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://github.com/richardffss/Cohabitat" class="bg-white text-slate-950 px-8 py-4 rounded-xl font-bold hover:bg-slate-200 transition">Get Started on GitHub</a>
+                <a href="https://ai.studio/apps/drive/1FOn-bX0fF3sS0kK9AGrrNYWbjNvrlnNN" class="bg-slate-800 text-white px-8 py-4 rounded-xl font-bold border border-slate-700 hover:bg-slate-700 transition">View AI Demo</a>
+            </div>
+        </div>
+        <!-- Background Glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-500/10 blur-[120px] rounded-full -z-10"></div>
+    </header>
+
+    <!-- Problem Statement -->
+    <section class="py-20 border-y border-slate-900 bg-slate-900/30">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Roommate friction is real.</h2>
+            <p class="text-lg text-slate-400 leading-relaxed">
+                Living with others shouldn't feel like a second job. Between missed chores, forgotten bills, and fragmented group chats, managing a shared living space often leads to unnecessary stress and "who-did-what" arguments.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Description -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">A central operating system for your home.</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    By centralizing tasks and leveraging AI, Cohabitat turns domestic chaos into a streamlined, collaborative experience. It turns your household data into actionable, AI-driven coordination.
+                </p>
+                <div class="p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-xl">
+                    <p class="text-indigo-300 font-medium">✨ Powered by Google Gemini AI for smart household insights [2].</p>
+                </div>
+            </div>
+            <div class="bg-slate-800 rounded-2xl aspect-video flex items-center justify-center border border-slate-700 shadow-2xl">
+                <!-- Placeholder for UI Preview -->
+                <span class="text-slate-500 mono text-sm">[ Dashboard Preview ]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold text-white mb-16">Key Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 bg-slate-950 border border-slate-800 rounded-2xl hover:border-indigo-500 transition group">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Intelligent Task Management</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Keep track of who is responsible for what, from cleaning the kitchen to taking out the trash with dedicated service modules [1].</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-8 bg-slate-950 border border-slate-800 rounded-2xl hover:border-indigo-500 transition group">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">TypeScript Reliability</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Built with a 99% TypeScript architecture [3] to ensure a smooth, type-safe, and bug-free experience for your household.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-8 bg-slate-950 border border-slate-800 rounded-2xl hover:border-indigo-500 transition group">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Modular Architecture</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">A professional structure of components and services [1] that makes the app easy for developers to customize and extend.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold text-white mb-16">Setup in 3 Minutes</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="relative text-center">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-6">1</div>
+                    <h3 class="font-bold mb-2">Clone & Install</h3>
+                    <p class="text-slate-400 text-sm">Clone the repo and run <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">npm install</code> [2].</p>
+                </div>
+                <div class="relative text-center">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-6">2</div>
+                    <h3 class="font-bold mb-2">Connect AI</h3>
+                    <p class="text-slate-400 text-sm">Set your <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">GEMINI_API_KEY</code> in <code class="text-slate-300">.env.local</code> [2].</p>
+                </div>
+                <div class="relative text-center">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-6">3</div>
+                    <h3 class="font-bold mb-2">Launch Hub</h3>
+                    <p class="text-slate-400 text-sm">Run <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">npm run dev</code> to start the local environment [2].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="py-20 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-10">Built for Performance</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <span class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-full text-slate-300 font-medium">TypeScript (99%) [3]</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-full text-slate-300 font-medium">Google Gemini API</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-full text-slate-300 font-medium">Vite + React [1]</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-full text-slate-300 font-medium">Node.js [2]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Users -->
+    <section class="py-20 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-white">Who is Cohabitat for?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <p class="text-indigo-100 italic">"Students sharing their first flat."</p>
+                <p class="text-indigo-100 italic">"Co-living communities needing structure."</p>
+                <p class="text-indigo-100 italic">"Developers looking for modern AI boilerplates."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 max-w-3xl mx-auto px-6">
+        <h2 class="text-center text-3xl font-bold text-white mb-12">FAQ</h2>
+        <div class="space-y-8">
+            <div>
+                <h4 class="text-white font-bold mb-2">Is Cohabitat open source?</h4>
+                <p class="text-slate-400">Yes, the full source is available on GitHub under the <code class="text-indigo-400">richardffss/Cohabitat</code> repository [4].</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-2">What do I need to run it?</h4>
+                <p class="text-slate-400">You will need **Node.js** installed as a prerequisite [2].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to upgrade your living situation?</h2>
+            <p class="text-slate-400 mb-10">Stop the group chat madness and start living in sync.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://github.com/richardffss/Cohabitat" class="bg-indigo-600 hover:bg-indigo-500 text-white px-10 py-4 rounded-xl font-bold transition">Fork on GitHub</a>
+                <a href="https://ai.studio/apps/drive/1FOn-bX0fF3sS0kK9AGrrNYWbjNvrlnNN" class="bg-white text-slate-950 px-10 py-4 rounded-xl font-bold hover:bg-slate-200 transition">Try Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-900 text-center">
+        <div class="max-w-7xl mx-auto px-6 text-slate-500 text-sm">
+            <p>&copy; 2024 Cohabitat. Built with TypeScript and Google Gemini.</p>
+        </div>
+    </footer>
+
+</body>
 </html>
